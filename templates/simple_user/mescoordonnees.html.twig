@@ -1,0 +1,151 @@
+{% extends 'base.html.twig' %}
+ {% block body %}
+
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+         <a class="navbar-brand" href="#"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+         </button>
+
+         <div class="collapse navbar-collapse" id="navbarColor01">
+             <ul class="navbar-nav mr-auto  ">
+
+                 <li class="nav-item">
+                     <a class="nav-link" href="#"></a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#"></a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#"></a>
+                 </li>
+             </ul>
+             <ul class="nav navbar-nav navbar-right">
+
+
+                 <li class="nav-item">
+                     <a href="{{ path('logout') }}" class="nav-link"><h6><span class="zmdi zmdi-account-o"></span> Déconnexion</h6></a>
+
+                 </li>
+                 {% if app.user.test is defined %}
+                     <li class="nav-item">
+                         <a href="{{ path('mescoordonnees') }}" class="nav-link"><h6><span class="zmdi zmdi-account-o"></span>Mes coordonnées</h6></a>
+
+                     </li>
+                 {% endif %}
+
+             </ul>
+         </div>
+     </nav>
+     <br>
+     <br>
+
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+     <div class="container">
+
+         <form class="well form-horizontal" action="" method="post"  id="contact_form">
+             <fieldset>
+
+                 <!-- Form Name -->
+                 <legend>Mes Coodronnées </legend>
+
+                 <!-- Text input-->
+
+                 <div class="form-group">
+                     <label class="col-md-4 control-label">Nom:</label>
+                     <div class="col-md-4 inputGroupContainer">
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                             {{ coordonnes.nom }}
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- Text input-->
+
+                 <div class="form-group">
+                     <label class="col-md-4 control-label" >Prénom</label>
+                     <div class="col-md-4 inputGroupContainer">
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                             {{ coordonnes.prenom }}
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- Text input-->
+                 <div class="form-group">
+                     <label class="col-md-4 control-label">E-Mail</label>
+                     <div class="col-md-4 inputGroupContainer">
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                             {{  coordonnes.email }}
+                         </div>
+                     </div>
+                 </div>
+
+
+                 <!-- Text input-->
+
+                 <div class="form-group">
+                     <label class="col-md-4 control-label">Numéro de téléphone #</label>
+                     <div class="col-md-4 inputGroupContainer">
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                             {{  coordonnes.telephone }}
+                         </div>
+                     </div>
+                 </div>
+                 <div class="form-group">
+                     <label class="col-md-4 control-label">Date de naissance #</label>
+                     <div class="col-md-4 inputGroupContainer">
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                             {{  coordonnes.datanaissance|date("m/d/Y") }}
+                         </div>
+                     </div>
+                 </div>
+                 <div class="form-group">
+                     <label class="col-md-4 control-label">Numéro de carte identité</label>
+                     <div class="col-md-4 inputGroupContainer">
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                             {{  coordonnes.cin }}
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- Select Basic -->
+
+                 <div class="form-group">
+                     <label class="col-md-4 control-label">Groupe sanguin</label>
+                     <div class="col-md-4 selectContainer">
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="glyphicon glyphicon-tint"></i></span>
+                             {{ coordonnes.groupesanguin }}
+                         </div>
+                     </div>
+                 </div>
+
+
+
+
+                 <!-- Button -->
+                 <div class="form-group">
+                     <label class="col-md-4 control-label"></label>
+                     <div class="col-md-4">
+
+                         <button type="button" class="btn btn-secondary" ><a href="{{ path('usersimpleuser') }}">Retour</a></button>
+                     </div>
+                 </div>
+
+             </fieldset>
+         </form>
+     </div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'admin/base2.html.twig' %}
+{% block body %}
+    <section class="content">
+        <div class="container-fluid">
+    <div class="row clearfix">
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <div class="card">
+
+
+                <div class="body">
+                  <a href="{{ path('adduser') }}">  <button class="btn btn-success pull-right"><i class="material-icons">person_add </i>Ajouter</button></a>
+                    <div class="table-responsive left-aligned">
+                        <table class="table table-hover dashboard-task-infos">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Cin</th>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>Mail </th>
+                                <th>Rôle</th>
+                                <th>Action </th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+{% for all in alluser %}
+    {% if not (all.roles =='["ROLE_USER"]') %}
+                                <tr>
+                                    <td>{{ all.id }}</td>
+                                    <td>{{ all.nom }}</td>
+                                    <td>{{ all.prenom }}
+                                    </td>
+                                    <td>{{ all.cin }}</td>
+                                    <td>{{ all.email }}</td>
+                                    <td>{%  if all.roles=='["ROLE_ADMIN"]' %}
+                                         Admin
+                                        {% else %}
+                Super Admin
+                {% endif %}
+        </td>
+                                    <td>{%  if all.roles=='["ROLE_SUPERADMIN"]' %}
+                                            <a href="{{ path('changeretat',{'id': all.userutilisateur_id , 'role': "ROLE_ADMIN" }) }}">      <button type="button" class="btn bg-pink waves-effect" >Rendre ADMIN</button></a>
+                                        {% else %}
+                                        <a href="{{ path('changeretat',{'id': all.userutilisateur_id, 'role':"ROLE_SUPERADMIN" }) }}">  <button type="button" class="btn bg-light-blue waves-effect">Rendre SUPERADMIN</button></a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+{% endif %}
+    {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+</div>
+            </div><!--changeretat-->
+        </div>
+</div>
+        </section>
+
+{% endblock %}

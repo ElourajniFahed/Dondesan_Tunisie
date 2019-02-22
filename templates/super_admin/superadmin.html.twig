@@ -1,0 +1,51 @@
+{% extends 'admin/base2.html.twig' %}
+ {% block body %}
+<section class="content">
+ <div class="container-fluid">
+  <div class="row clearfix">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+   <div class="card">
+    <div class="body">
+
+     <div class="body">
+      <div class="table-responsive">
+       <table class="table table-hover dashboard-task-infos">
+        <thead>
+        <tr>
+         <th>#</th>
+         <th>Date</th>
+         <th>Type</th>
+         <th>Message</th>
+         <th>Plus info</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {%   for note in noti %}
+         <tr>
+          <td>{{ note.id }}</td>
+          <td>{{ note.date|date('Y-m-d H:i:s') }}</td>
+          <td> {% if  note.subject == "Donneur" %}<span class="label bg-green">{{ note.subject }}
+            </span>
+           {% else %}
+            <span class="label bg-red">{{ note.subject }}
+                                             </span>
+           {% endif %}
+          </td>
+          <td>{{ note.message }}</td>
+          <td><a href="{{ path('voir_show',{'id':note.link }) }}">show</a></td>
+         </tr>
+        {% endfor %}
+        </tbody>
+       </table>
+      </div>
+     </div>
+
+    </div>
+   </div>
+  </div>
+</div>
+  </div>
+ </section>
+
+{% endblock %}

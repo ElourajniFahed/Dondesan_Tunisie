@@ -1,0 +1,312 @@
+/*generale style*/
+body{
+  font-family:"Lucida Sans";
+}
+header{
+  height: auto;
+  padding: 10px 0;
+ 
+  position:fixed;
+  width: 100%;
+  z-index: 999;
+}
+header .logo h2{
+  font-size: 35px;
+  color:#fff;
+  text-align: center;
+}
+header nav .nav-list{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0px;
+}
+.slid{
+  height: 800px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  top: 0px;
+  right: 0;
+  bottom: 20px;
+  left: 0;
+  margin-bottom: 30px;
+  background:rgba(0,0,0,0.5) ;
+
+}
+
+header  span.icon{
+  position:absolute;
+  right: 30px;
+  top: 35px;
+  z-index: 10;
+  display: none;
+}
+header nav .nav-list .list a{
+  display: block;
+  padding: 15px 0;
+  margin: 9px 0px;
+  text-decoration: none;
+  transition:all 0.3s ease-in-out ;
+  color:#fff;
+}
+header nav .nav-list .list a:hover{
+  color:#d9230f;
+}
+.add3{
+  height: 25px;
+  background-image: url("/img/don-du-sang.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.sections{
+  padding: 0px 0 ;
+}
+@media (max-width: 575px) {
+  header{
+      background-color:#000 ;
+  }
+  header nav .nav-list{
+
+      display: none;
+      text-align: center;
+      padding: 0;
+
+  }
+  header .logo {
+      text-align: center;
+  }
+  header  span.icon{
+      display: block;
+  }
+}
+/*home section*/
+
+.lg{
+  color:#fff;
+  size: 40px;
+
+}
+.ca {
+  text-align: center;
+}
+.titlehome{
+  color: #ffffff;
+  font-size:45px;
+  text-align: center;
+
+   padding :90px;
+
+}
+.textdessous{
+  margin-top: 60px;
+  color: #ffffff;
+  font-size: 18px;
+
+  margin-bottom: 60px;
+
+}
+
+.overlays{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background:rgba(0,0,0,0.5) ;
+}
+.boutton{
+  padding:10px 0 ;
+  margin-left: 450px;
+  display: flex;
+  width: 150px;
+
+}
+.boutt1{
+  margin-left: 20px;
+}
+.stiky{
+  background-color: #000;
+  color:#fff;
+}
+
+@media (max-width :575px) {
+  .titlehome{
+
+      font-size:25px;
+
+
+
+
+  }
+  .boutton{
+      display: block;
+      margin-top: 50px;
+      margin-left: 50px;
+  }
+  .boutt1{
+      margin-top: 20px;
+  }
+
+  
+}
+/*about us-*/
+.section-title-aboutUs h4{
+
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 20px;
+
+
+}
+.about-us-info h4 span{
+  color :#d9230f;
+
+
+}
+.aboutinfobn{
+  background-color: #d9230f;
+  padding:10px 20px;
+  border:0px;
+  color:#f7f7f7;
+  font-weight: bold;
+}
+.about_info-desc{
+  line-height: 18px;
+  color:#888;
+  margin-bottom: 20px;
+}
+.line{
+  width: 250px;
+  background-color: #ddd;
+  height: 3px;
+  margin: auto;
+}
+.line span{
+  width: 150px;
+  background-color: #d9230f ;
+  height: 4px;
+  display: block;
+  margin:auto;
+  bottom: 0.5px;
+}
+.aboutimg img{
+  width:100%;
+}
+.text {
+  color: #000000;
+  font-family: "Lucida Sans";
+  font-size: 12px;
+  font-style: italic;
+}
+.services{
+  background-color: #f7f7f7;
+}
+
+.services .serv{
+   text-align: center;
+   padding: 20px;
+   background: #d9230f;
+}
+.services .serv .icon{
+  text-align: center;
+  padding: 20px;
+  background-color: #d9230f;
+  color:#fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height:10px;
+
+}
+.services .serv-title{
+font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color:#fff;
+
+}
+.services .serv-desc{
+  font-size: 17px;
+  color:#888;
+  margin-bottom: 20px;
+}
+.services .serv{
+  margin-bottom: 20px;
+}
+
+#more {display: none;}
+
+.wizard {
+  margin: 50px auto;
+}
+
+.wizard-contents {
+  background: #f7f7f7;
+  border: 1px solid #c3c3c3;
+  border-radius: 3px;
+  padding: 80px 25px 30px;
+}
+.wizard-contents .main-title {
+  margin-bottom: 50px;
+}
+.wizard-contents .question {
+  margin-bottom: 30px;
+}
+.wizard-contents form {
+  margin-top: 50px;
+}
+
+.summary {
+  list-style-type: none;
+}
+.summary li {
+  padding: 10px 0;
+  border-bottom: 1px solid #cecaca;
+}
+.summary li span {
+  display: block;
+  text-align: left;
+}
+.summary li:last-child {
+  border-bottom: none;
+}
+
+.question-image {
+  position: absolute;
+  left: -25px;
+  top: -25px;
+  transform: rotate(-14deg);
+  width: 100px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.actions a, .actions button {
+  cursor: pointer;
+}
+.actions a {
+/*   margin: 20px 0; */
+}
+
+#moncercle{
+  background:#d9230f;
+  border-radius:50%;
+  width:160px;
+  height:160px;
+  border:2px solid #d9230f; 
+  text-align:center;
+  
+  border-radius:100px;
+}
+.circle.multi-line{
+  
+  height:100px;
+  padding-bottom:60px;
+  /* 70 + 30 = 100 */
+}
+#success_message{ display: none;}

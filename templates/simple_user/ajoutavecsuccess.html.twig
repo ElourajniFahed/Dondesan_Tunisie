@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+ {% block body %}
+
+         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container">
+
+<form class="well form-horizontal" action="" method="post"  id="contact_form">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Mes Coodronnées </legend>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Nom:</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input  name="first_name" placeholder="tapez votre nom" class="form-control"  type="text">
+                </div>
+            </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" >Prénom</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input name="last_name" placeholder="Prenom" class="form-control"  type="text">
+                </div>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label">E-Mail</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                    <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Text input-->
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Numéro de téléphone #</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                    <input name="phone" placeholder="(+216)555-1212" class="form-control" type="text">
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Text input-->
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Date de  Naissance</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <input name="date" placeholder="date naissance" class="form-control"  type="date">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label">Numéro de carte identité</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <input name="cin" placeholder="carte identite" class="form-control"  type="text">
+                </div>
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Groupe sanguin</label>
+            <div class="col-md-4 selectContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-tint"></i></span>
+                    <select name="sang" class="form-control selectpicker" >
+                        <option value=" " >choisissez votre groupe sanguin</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O+">O-</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text input-->
+
+
+
+        <!-- Text input-->
+
+
+
+        <!-- radio checks -->
+
+
+        <!-- Success message -->
+        <div class="alert alert-success" role="alert" id="success_message">Bien <i class="glyphicon glyphicon-thumbs-up"></i> Merci de nous avoir contacté, nous reviendrons vers vous sous peu.</div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-danger" >Envoyer <span class="glyphicon glyphicon-send"></span></button>
+                <button type="button" class="btn btn-secondary" ><a href="{{ path('usersimpleuser') }}">Annuler</a><span class="glyphicon glyphicon-remove-circle"></span></button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+</div>
+<!-- /.container -->
+{% endblock %}

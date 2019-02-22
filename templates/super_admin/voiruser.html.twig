@@ -1,0 +1,63 @@
+{% extends 'admin/base2.html.twig' %}
+ {% block body %}
+
+     <section class="content">
+         <div class="container-fluid">
+             <div class="row clearfix">
+                 <div class="col-xs-12 col-sm-1">
+                     </div>
+                 <div class="col-xs-12 col-sm-6">
+
+     <div class="card card-about-me">
+         <div class="header">
+             <h2>ses coordonnées</h2>
+         </div>
+         <div class="body">
+             <ul>
+                 <li>
+                     <div class="title">
+                         <i class="material-icons">library_books</i>
+                         Nom & Prenom
+                     </div>
+                     <div class="content">
+                         {{ utilisateur.nom }}
+                         {{ utilisateur.prenom }}
+                     </div>
+                 </li>
+                 <li>
+                     <div class="title">
+                         <i class="material-icons">library_books</i>
+                         Numéro de carte d'identite
+                     </div>
+                     <div class="content">
+                         {{ utilisateur.cin }}
+                     </div>
+                 </li>
+                 <li>
+                     <div class="title">
+                         <i class="material-icons">library_books</i>
+                         Numéro de téléphone
+                     </div>
+                     <div class="content">
+                        {{  utilisateur.simutilisateur.telephone }}
+                     </div>
+                 </li>
+                 <li>
+                     <div class="title">
+                         <i class="material-icons"> mail </i>
+                         Adresse mail
+                     </div>
+                     <div class="content">
+                         {{  utilisateur.simutilisateur.email }}
+                     </div>
+                 </li>
+
+                 <a href="{{ path('admin') }}">Retour  </a>
+<!--C:\wamp64\www\DonDuSang4\public\Admin\js\pages\index.js-->
+             </ul>
+             </div>
+         <div class="col-xs-12 col-sm-3">
+         </div>
+         </div>
+     </div>
+{% endblock %}

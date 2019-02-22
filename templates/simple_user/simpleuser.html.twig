@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+ {% block body %}
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto  ">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+
+                <li class="nav-item">
+                      <a href="{{ path('logout') }}" class="nav-link"><span class="zmdi zmdi-account-o"></span> Déconnexion</a>
+
+                </li>
+          {% if app.user.test != NULL  %}
+                <li class="nav-item">
+                      <a href="{{ path('mescoordonnees') }}" class="nav-link"><span class="zmdi zmdi-account-o"></span>Mes coordonnées</a>
+
+                </li>
+              {% endif %}
+
+</ul>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+      <br>
+  <div class="container">
+  <div class="jumbotron">
+      <h4 class="display-4">Bonjour, membre !</h4>
+      <br>
+      <br>
+      <center>
+
+      {% if app.user.test != NULL %}
+<button type="button" class="btn btn-primary"  >
+
+  <a href="{{ path('coordonnes') }}" style="color: #fff3cd">  étes vous donneur ou demandeur  ?</a>
+  </button>
+  {% else %}
+  <button type="button" class="btn btn-primary"  >
+
+  <a href="{{ path('coordonnes') }}" style="color: #fff3cd">  Fiche de renseignement</a>
+  </button>
+  {% endif %}
+  <!-- Modal --></center>
+
+          <br>
+      <br>
+      <br>
+      <table id="example" class="table table-striped table-bordered" style="width:100%">
+          <thead>
+          <tr>
+
+              <th>Groupe sanguin</th>
+              <th>Message</th>
+              <th>Type</th>
+
+          </tr>
+          </thead>
+          <tbody>
+          {% for dat in datademandeurs %}
+          <tr>
+
+              <td>{{ dat.gpe }}</td>
+              <td>{{ dat.message }}</td>
+              <td>Demandeur</td>
+
+          </tr>
+          {% endfor %}
+          {% for dat2 in datadonneurs %}
+              <tr>
+
+                  <td>{{ dat2.gpe }}</td>
+                  <td>{{ dat2.message }}</td>
+                  <td>Donneur</td>
+
+              </tr>
+          {% endfor %}
+
+          </tbody>
+          <tfoot>
+          <tr>
+
+              <th>Groupe sanguin</th>
+              <th>Message</th>
+              <th>Type</th>
+          </tr>
+          </tfoot>
+      </table>
+
+      <script>
+          $(document).ready(function() {
+              $('#example').DataTable();
+          } );
+      </script>
+
+      <!-- Text input-->
+    </div>
+{% endblock %}
